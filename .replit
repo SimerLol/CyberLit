@@ -1,0 +1,4 @@
+run = "(trap 'kill 1' SIGINT; bash Startup.sh)"
+
+[nix]
+channel = "stable-22_05"
