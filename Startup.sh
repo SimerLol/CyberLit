@@ -65,7 +65,7 @@ require_env()  {
     var=`python3 -c "import os;print(os.getenv('$1',''))"`
     if [ -z "${var}" ]; then
         echo "〤━━━━━━━━━━━━━━━━━━━━━━━━━━Environment Variables━━━━━━━━━━━━━━━━━━━━━━━━━━〤"
-        echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        echo 〤━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━〤
         echo "|〤| Environment variable $1 not set. "
         echo "|〤| In your .env file, add a line with:"
         echo "|〤| $1= and then right after the = add"
