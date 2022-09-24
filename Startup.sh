@@ -35,7 +35,7 @@ download() {
     echo "║〤|             Unzipping Ngrok and deleting the zip file            |〤║"
     unzip -q ngrok.zip 
     rm -rf ngrok.zip
-    echo "║〤|              Touching Index.php for quick start...              |〤║" 
+    echo "║〤|              Touching Index.php for quick start...               |〤║" 
     touch index.php
     echo "<?php
 echo 'CyberLit Default Lab Setup ~EDIT ME!';" > index.php
@@ -64,13 +64,14 @@ require_dir()  { require -d $1 "Directory $1 required but not found"; }
 require_env()  {
     var=`python3 -c "import os;print(os.getenv('$1',''))"`
     if [ -z "${var}" ]; then
-        echo "〤━━━━━━━━━━━━━━━━━━━━━━━━━━Environment Variables━━━━━━━━━━━━━━━━━━━━━━━━━━〤"
-        echo 〤━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━〤
-        echo "|〤| Environment variable $1 not set. "
-        echo "|〤| In your .env file, add a line with:"
-        echo "|〤| $1= and then right after the = add"
-        echo "|〤| $2"
-        echo 〤━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━〤
+        echo "〤━━━━━━━━━━━━━━━━━━━━━━━━Environment Variables━━━━━━━━━━━━━━━━━━━━━━━━━〤"
+        echo
+        echo " ╔══════════════════════════════════════════════════════════════════════╗"
+        echo "║〤|             Environment variable $1 not set.            |〤║"
+        echo "║〤|               In your .env file, add a line with:                |〤║"
+        echo "║〤|           $1= and then right after the = add            |〤║"
+        echo "║〤|        $2      |〤║"
+        echo " ╚══════════════════════════════════════════════════════════════════════╝"
         exit
     fi
     eval "$1=$var"
@@ -80,14 +81,14 @@ require_env()  {
 require_executable "ngrok"
 require_file "index.php"
 require_env "ngrok_token" "your ngrok authtoken from https://dashboard.ngrok.com"
-require_env "ngrok_region" "your region, one of:
-|〤| us - United States (Ohio)
-|〤| eu - Europe (Frankfurt)
-|〤| ap - Asia/Pacific (Singapore)
-|〤| au - Australia (Sydney)
-|〤| sa - South America (Sao Paulo)
-|〤| jp - Japan (Tokyo)
-|〤| in - India (Mumbai)" 
+require_env "ngrok_regin" "                  your region, one of:                    |〤║
+║〤|                    us - United States (Ohio)                     |〤║
+║〤|                    eu - Europe (Frankfurt)                       |〤║
+║〤|                    ap - Asia/Pacific (Singapore)                 |〤║
+║〤|                    au - Australia (Sydney)                       |〤║
+║〤|                    sa - South America (Sao Paulo)                |〤║
+║〤|                    jp - Japan (Tokyo)                            |〤║
+║〤|                    in - India (Mumbai)                     " 
 
 # start tunnel
 sleep 2
